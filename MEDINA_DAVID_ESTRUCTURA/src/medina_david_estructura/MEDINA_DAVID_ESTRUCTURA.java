@@ -44,8 +44,29 @@ public class MEDINA_DAVID_ESTRUCTURA {
     
  // FUNCION DE NUMERO ALEATORIO PRIMO
     public static void numeroPrimo(){
-        int 
+        int numero = (int) (Math.random()*100)+1;
+        System.out.println("El numero generado es: "+numero);
         
+        int cantidadDivisores = 0;
+        StringBuilder listaDivisores = new StringBuilder();
+        
+        for (int i = 1; i <= numero; i++) {
+            
+        if (numero % i == 0) {
+            cantidadDivisores++;
+            listaDivisores.append(i).append(" ");
+            }
+            
+        }
+     if (cantidadDivisores == 2) {
+        System.out.println("El numero " + numero + " es primo porque solo tiene dos divisores.");
+    } else {
+        System.out.println("El numero " + numero + " no es primo porque tiene más de dos divisores.");
+    }
+
+    // Mostrar la cantidad y la lista de divisores
+    System.out.println("Cantidad de divisores: " + cantidadDivisores);
+    System.out.println("Divisores: " + listaDivisores.toString().trim());
     }
     
     
@@ -91,7 +112,8 @@ public class MEDINA_DAVID_ESTRUCTURA {
                     
                 case 3:
                     
-                    
+                    numeroPrimo();
+                    break;
                     
                 case 4:
                     
