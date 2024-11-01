@@ -11,7 +11,7 @@ public class MEDINA_DAVID_ESTRUCTURA {
  // FUNCION PARA INVERTIR UNA PALABRA
     public static void palabraInvertida(Scanner entrada){
         System.out.println("****BIENVENIDO A PALABRA INVERTIDA****");
-        System.out.println("Ingresa una palabra: ");
+        System.out.print("Ingresa una palabra: ");
         String palabra = entrada.next();
         String palabraInvertida = new StringBuilder(palabra).reverse().toString();
         System.out.println("\nLa palabra invertida es: "+ palabraInvertida);
@@ -23,7 +23,7 @@ public class MEDINA_DAVID_ESTRUCTURA {
  // FUNCION  PARA EL NUMERO PERFECTO
     public static void numeroPerfecto (Scanner entrada){
         System.out.println("****BIENVENIDO A NUMERO PERFECTO****");
-        System.out.println("Ingrese un numero para verificar si es perfecto: ");
+        System.out.print("Ingrese un numero para verificar si es perfecto: ");
         int numero = entrada.nextInt();
         entrada.nextLine();
         int verificacion =0;
@@ -44,6 +44,7 @@ public class MEDINA_DAVID_ESTRUCTURA {
     
  // FUNCION DE NUMERO ALEATORIO PRIMO
     public static void numeroPrimo(){
+        System.out.println("****BIENVENIDO A NUMERO PRIMO****");
         int numero = (int) (Math.random()*100)+1;
         System.out.println("El numero generado es: "+numero);
         
@@ -71,7 +72,65 @@ public class MEDINA_DAVID_ESTRUCTURA {
     
     
  // FUNCION PARA VOTACIONES
-    
+    public static void Votaciones(Scanner entrada) {
+        System.out.println("****Bienvenido votaacions o sufragio****");
+    System.out.print("Cuantos votantes hay en el pais? ");
+    int totalVotantes = entrada.nextInt();
+    entrada.nextLine(); 
+
+    int votosValidos = 0;
+    // 0-AZUL, 1-ROJO, 2-NEGRO, 3-AMARILLO
+    int[] contadorVotos = new int[4]; 
+
+    // Ingreso de votos
+    for (int i = 0; i < totalVotantes; i++) {
+        System.out.print("\nIngresa tu voto (AZUL, ROJO, NEGRO, AMARILLO): ");
+        String voto = entrada.nextLine().toUpperCase(); 
+
+        switch (voto) {
+            case "AZUL":
+                contadorVotos[0]++;
+                votosValidos++;
+                break;
+            case "ROJO":
+                contadorVotos[1]++;
+                votosValidos++;
+                break;
+            case "NEGRO":
+                contadorVotos[2]++;
+                votosValidos++;
+                break;
+            case "AMARILLO":
+                contadorVotos[3]++;
+                votosValidos++;
+                break;
+            default:
+                System.out.println("Voto nulo.");
+                break;
+        }
+    }
+
+   
+    if ((votosValidos / (double) totalVotantes) < 0.6) {
+        System.out.println("VOTACION FALLIDA. Los votos válidos no alcanzan el 60%.");
+    } else {
+        // Determinar el ganador
+        String[] colores = {"AZUL", "ROJO", "NEGRO", "AMARILLO"};
+        int maxVotos = 0;
+        String ganador = "";
+
+        for (int i = 0; i < contadorVotos.length; i++) {
+            if (contadorVotos[i] > maxVotos) {
+                maxVotos = contadorVotos[i];
+                ganador = colores[i];
+            }
+        }
+
+        System.out.println("\n****La planilla ganadora es: " + ganador+"****");
+    }
+}
+
+
  
     
   // FUNCION PARA CONTADOR DE OPCIONES
@@ -91,7 +150,7 @@ public class MEDINA_DAVID_ESTRUCTURA {
         //MENU PRINCIPAL DONDE SE LLAMARAN LAS FUNCIONES
         
         do{
-            System.out.println("*****BIENVENIDO A MENU LABORATORIO*******");
+            System.out.println("\n\n\n*****BIENVENIDO A MENU LABORATORIO*******");
             System.out.println("1. Palabra inversa o palabra al reves.");
             System.out.println("2. Numero perfecto");
             System.out.println("3. Numeros primos aleatorios.");
@@ -116,7 +175,7 @@ public class MEDINA_DAVID_ESTRUCTURA {
                     break;
                     
                 case 4:
-                    
+                    Votaciones (entrada);
                     
                 case 5:
                 
