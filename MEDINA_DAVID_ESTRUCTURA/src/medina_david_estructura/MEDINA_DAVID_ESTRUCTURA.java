@@ -1,6 +1,9 @@
 
 package medina_david_estructura;
 
+import java.awt.BorderLayout;
+import java.util.Scanner;
+
 
 public class MEDINA_DAVID_ESTRUCTURA {
 //FUNCIONES PARA EL MENU
@@ -26,8 +29,29 @@ public class MEDINA_DAVID_ESTRUCTURA {
  
   //MAIN
     public static void main(String[] args) {
-      
+       
+        //El scanner y la variable de opcion
+        Scanner entrada = new Scanner(System.in);
+        int opcion;
+        
+        //Array para contar opcionees
+        int [] contadorOpciones = new int [4];
+        
+        
+        
         //MENU PRINCIPAL DONDE SE LLAMARAN LAS FUNCIONES
+        
+        do{
+            System.out.println("*****BIENVENIDO A MENU LABORATORIO*******");
+            System.out.println("1. Palabra inversa o palabra al reves.");
+            System.out.println("2. Numero perfecto");
+            System.out.println("3. Numeros primos aleatorios.");
+            System.out.println("4. Votaciones o sufragio");
+            System.out.println("--Digite una opcion:");
+            opcion = entrada.nextInt();
+        }while (opcion != 5);
+        
+        
         
     }
     
