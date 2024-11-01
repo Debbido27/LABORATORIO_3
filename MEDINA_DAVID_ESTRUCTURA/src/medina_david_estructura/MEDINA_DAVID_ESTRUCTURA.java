@@ -9,7 +9,12 @@ public class MEDINA_DAVID_ESTRUCTURA {
 //FUNCIONES PARA EL MENU
     
  // FUNCION PARA INVERTIR UNA PALABRA
-    
+    public static void palabraInvertida(Scanner entrada){
+        System.out.println("****BIENVENIDO A PALABRA INVERTIDA****");
+        String palabra = entrada.nextLine();
+        String palabraInvertida = new StringBuilder(palabra).reverse().toString();
+        System.out.println("\nLa palabra invertida es: "+ palabraInvertida);
+    }
     
     
     
@@ -53,7 +58,8 @@ public class MEDINA_DAVID_ESTRUCTURA {
             switch (opcion){
                 case 1:
                     
-                    
+                    palabraInvertida(entrada);
+                    break;
                 case 2:
                     
                     
