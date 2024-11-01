@@ -134,7 +134,14 @@ public class MEDINA_DAVID_ESTRUCTURA {
  
     
   // FUNCION PARA CONTADOR DE OPCIONES
- 
+    public static void imprimirContadorOpciones(int[] contadorOpciones) {
+        System.out.println("\nCantidad de veces que se ha ingresado a cada opcion:");
+        System.out.println("1. Palabra invertido: " + contadorOpciones[0]);
+        System.out.println("2. Numero Perfecto: " + contadorOpciones[1]);
+        System.out.println("3. Primos: " + contadorOpciones[2]);
+        System.out.println("4. Votaciones: " + contadorOpciones[3]);
+    }
+    
   //MAIN
     public static void main(String[] args) {
        
@@ -155,30 +162,38 @@ public class MEDINA_DAVID_ESTRUCTURA {
             System.out.println("2. Numero perfecto");
             System.out.println("3. Numeros primos aleatorios.");
             System.out.println("4. Votaciones o sufragio");
+            System.out.println("5. SALIR DEL PROGRAMA");
             System.out.println("--Digite una opcion:");
             opcion = entrada.nextInt();
             
             switch (opcion){
                 case 1:
-                    
+                    contadorOpciones[0]++;
                     palabraInvertida(entrada);
                     break;
                 case 2:
                     
-                    
+                    contadorOpciones[1]++;
                     numeroPerfecto(entrada);
                     break;
                     
                 case 3:
-                    
+                    contadorOpciones[2]++;
                     numeroPrimo();
                     break;
                     
                 case 4:
+                    contadorOpciones[3]++;
                     Votaciones (entrada);
+                    break;
                     
                 case 5:
-                
+                     System.out.println("\n\n****Saliendo del programa...****");
+                     imprimirContadorOpciones(contadorOpciones);
+                     break;
+                     
+                   default:
+                    System.out.println("Opcion no válida. Intenta de nuevo.");
             
             }
         }while (opcion != 5);
