@@ -49,6 +49,25 @@ public class MEDINA_DAVID_ESTRUCTURA {
             System.out.println("4. Votaciones o sufragio");
             System.out.println("--Digite una opcion:");
             opcion = entrada.nextInt();
+            
+            switch (opcion){
+                case 1:
+                    
+                    
+                case 2:
+                    
+                    
+                case 3:
+                    
+                    
+                    
+                case 4:
+                    
+                    
+                case 5:
+                
+            
+            }
         }while (opcion != 5);
         
         
