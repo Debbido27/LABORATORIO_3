@@ -11,19 +11,42 @@ public class MEDINA_DAVID_ESTRUCTURA {
  // FUNCION PARA INVERTIR UNA PALABRA
     public static void palabraInvertida(Scanner entrada){
         System.out.println("****BIENVENIDO A PALABRA INVERTIDA****");
-        String palabra = entrada.nextLine();
+        System.out.println("Ingresa una palabra: ");
+        String palabra = entrada.next();
         String palabraInvertida = new StringBuilder(palabra).reverse().toString();
         System.out.println("\nLa palabra invertida es: "+ palabraInvertida);
+                
     }
     
     
     
  // FUNCION  PARA EL NUMERO PERFECTO
-    
+    public static void numeroPerfecto (Scanner entrada){
+        System.out.println("****BIENVENIDO A NUMERO PERFECTO****");
+        System.out.println("Ingrese un numero para verificar si es perfecto: ");
+        int numero = entrada.nextInt();
+        entrada.nextLine();
+        int verificacion =0;
+        
+         for (int i = 1; i <= numero / 2; i++) {
+          if (numero % i == 0) {
+            verificacion += i;
+        }
+    }
+         if (verificacion == numero){
+             System.out.println(numero + " es un numero perfecto.");
+                     
+         }else{
+             System.out.println(numero + " no es un numero perfecto.");
+         }
+    }
     
     
  // FUNCION DE NUMERO ALEATORIO PRIMO
-    
+    public static void numeroPrimo(){
+        int 
+        
+    }
     
     
  // FUNCION PARA VOTACIONES
@@ -62,6 +85,9 @@ public class MEDINA_DAVID_ESTRUCTURA {
                     break;
                 case 2:
                     
+                    
+                    numeroPerfecto(entrada);
+                    break;
                     
                 case 3:
                     
